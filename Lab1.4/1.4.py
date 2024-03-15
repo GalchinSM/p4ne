@@ -20,5 +20,4 @@ for i in range(0, 51):
 
 sorted_networks_list = sorted(networks_list, key=lambda x: (x.prefixlen, x.network_address))
 
-for network in sorted_networks_list:
-    print(network)
+[print(network) for network in networks_list]
