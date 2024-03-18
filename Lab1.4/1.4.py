@@ -4,7 +4,8 @@ import random
 
 class IPv4RandomNetwork(ipaddress.IPv4Network):
     def __init__(self):
-        super().__init__((random.randint(0x0b000000, 0xdf000000), random.randint(8, 24)), strict=False)
+        super().__init__((random.randint(0x0b000000, 0xdf000000),
+                          random.randint(8, 24)), strict=False)
 
     def get_network_address(self):
         return self.network_address
@@ -20,4 +21,5 @@ for i in range(0, 51):
 
 sorted_networks_list = sorted(networks_list, key=lambda x: (x.prefixlen, x.network_address))
 
-[print(network) for network in networks_list]
+for network in networks_list:
+    print(network)

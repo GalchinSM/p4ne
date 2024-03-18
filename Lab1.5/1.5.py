@@ -6,8 +6,8 @@ ip_list = []
 dir_name = 'config_files'
 file_list = glob.glob(f'{dir_name}\\*.log')
 
-for file_name in file_list:
-    with open(file_name) as file:
+for file_path in file_list:
+    with open(file_path) as file:
         file_lines = file.readlines()
         for line in file_lines:
             if 'ip address' in line:
@@ -15,4 +15,5 @@ for file_name in file_list:
                 if ip_and_mask_str:
                     ip_list.append(ip_and_mask_str)
 
-[print(item) for item in list(set(ip_list))]
+for ip in list(set(ip_list)):
+    print(ip)
