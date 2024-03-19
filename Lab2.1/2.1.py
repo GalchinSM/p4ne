@@ -46,7 +46,7 @@ output_list = r.json()['Cisco-IOS-XE-interfaces-oper:interfaces']['interface']
 for interface in output_list:
     interface_list.append(
         f"Interface: {interface['name']}\n"
-        f"Packets: {interface['v4-protocol-stats']['out-pkts']}"
+        f"Packets: {interface['v4-protocol-stats']['out-pkts']} "
         f"Bytes: {interface['v4-protocol-stats']['out-octets']}")
 
 for item in interface_list:
