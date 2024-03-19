@@ -40,9 +40,9 @@ r = requests.get('https://10.31.70.209' + '/restconf/data/Cisco-IOS-XE-interface
                  headers=headers,
                  verify=False)
 
-interface_list = []
 output_list = r.json()['Cisco-IOS-XE-interfaces-oper:interfaces']['interface']
 
+interface_list = []
 for interface in output_list:
     interface_list.append(
         f"Interface: {interface['name']}\n"
