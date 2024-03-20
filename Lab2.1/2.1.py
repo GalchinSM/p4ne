@@ -10,8 +10,8 @@ ssh_connection.connect('10.31.70.209',
                        password='j0sg1280-7@',
                        look_for_keys=False,
                        allow_agent=False)
-session = ssh_connection.invoke_shell()
 
+session = ssh_connection.invoke_shell()
 session.send(b'terminal len 0\n')
 time.sleep(0.1)
 session.send(b'show interface\n')
